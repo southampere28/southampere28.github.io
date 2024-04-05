@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="Description" content="Enter your description here"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<link rel="stylesheet" href="assets/css/style.css">
+<title>B4 ~ Layout</title>
+
+<style>
+    .kontenUtama li:hover{
+        background-color: aqua;
+    }
+    .kontenUtama .nav-link.active{
+        background-color: rgb(32, 32, 238);
+    }
+    .kontenUtama #subnav.active {
+      background-color: rgb(118, 118, 238);
+    }
+    .line-number:before {
+        content: counter(line);
+        counter-increment: line;
+        display: inline-block;
+        width: 2em;
+        text-align: right;
+        margin-right: 0.5em;
+        color: #777;
+    }
+    .code-block .kelasmerah {
+      color: red;
+    }
+    .code-block {
+        counter-reset: line;
+    }
+    .blockKode {
+      position: relative;
+    }
+
+    .blockKode::after {
+      content: "Code Copied!";
+      position: absolute;
+      top: -30px;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 5px 10px;
+      background-color: rgba(0, 0, 0, 0.8);
+      color: #fff;
+      border-radius: 4px;
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out;
+    }
+
+    .blockKode.copied::after {
+      opacity: 1;
+    }
+
+    #htcode button{
+      background-color: transparent;
+      border: transparent;
+    }
+    #htcode button:hover {
+      background-color: transparent;
+      border: transparent;
+    }
+    #htcode button:focus{
+      box-shadow: none;
+    }
+</style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="../myporto/resource/image/brandicon.png" width="30" height="30" alt="">
+            </a>
+            <a class="navbar-brand" href="#">Mudydev</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link" href="../myporto/index.html">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Portofolio</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Contact</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link active dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Tutorials
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item active" href="#">Bootstrap</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">My github</a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="kontenUtama">
+        <div class="container-fluid" style="margin-top: 60px;">
+            <div class="row">
+                <div class="col-sm-3 position-fixed float-left border-right" style="overflow-y: auto; height: 100vh;">
+                    <ul class="nav nav-pills nav-stacked flex-column">
+                        <li>
+                            <a class="nav-link" href="index.html">Instalasi<span class="badge badge-primary float-right">10</span></a>
+                        </li>
+                        <li>
+                          <a class="nav-link active" href="#">Layout</a>
+                        </li>
+                        <ul class="nav nav-pills nav-stacked flex-column ml-3">
+                            <li>
+                                <a id="subnav" class="nav-link active" href="#">Grid</a>
+                            </li>
+                          <li>
+                            <a id="subnav" class="nav-link" href="#">Nav2</a>
+                          </li>
+                        </ul>
+                        <li>
+                          <a class="nav-link" href="#">hmm apa ya</a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="#">Link<span id="badgeElement" class="badge badge-success float-right">Baru</span></a>
+                        </li>
+                        <li>
+                            <a class="nav-link disabled" href="#">Disabled link</a>
+                        </li>
+                        <li>
+                            <a class="nav-link disabled" href="#">Disabled link</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-sm-9 ml-auto">
+                    <div class="container pt-2">
+                        <div class="container">
+                            <h4>Bagaimana Cara Kerja Grid System?</h4>
+                            <p>Sistem grid Bootstrap menggunakan serangkaian container, 
+                              row, dan column untuk menata dan menyelaraskan konten. 
+                              Dibangun dengan flexbox dan sepenuhnya responsif.</p> 
+                            <p>Di bawah ini adalah contoh dan pandangan mendalam tentang bagaimana grid bersatu.</p>
+                            <div class="container bg-light border border-dark">
+                              
+                                <div class="row text-center">
+                                    <div class="col-sm">
+                                      <p>pertama</p>
+                                    </div>
+                                    <div class="col-sm border-left border-right border-dark">
+                                      <p>kedua</p>
+                                    </div>
+                                    <div class="col-sm">
+                                      <p>ketiga</p>
+                                    </div>
+                                  </div>
+                             
+                            </div>
+                            <h4>Penerapan Code:</h4>
+                            
+                            <div id="htcode" class="container bg-secondary text-right">
+                              <!-- <div id="sddd" class="text-center"><p>koplak</p></div> -->
+                              <button id="copyButton" class="btn btn-secondary btn-hover-transparent"><i class="fas fa-copy"></i> Salin Kode</button>
+                            </div>
+                            <div class="blockKode">
+                              <pre class="code-block bg-dark"><code class="tooltip-hover text-light" data-toggle="tooltip" data-placement="bottom" title="Layout Grid">
+<span class="line-number kelasmerah">  &lt;div class="container"&gt;</span>
+<span class="line-number">     &lt;div class="row"&gt;</span>
+<span class="line-number">       &lt;div class="col-sm"&gt;</span>
+<span class="line-number">             kolom pertama</span>
+<span class="line-number">          &lt;/div&gt;</span>
+<span class="line-number">          &lt;div class="col-sm"&gt;</span>
+<span class="line-number">             kolom kedua</span>
+<span class="line-number">          &lt;/div&gt;</span>
+<span class="line-number">          &lt;div class="col-sm"&gt;</span>
+<span class="line-number">             kolom ketiga</span>
+<span class="line-number">          &lt;/div&gt;</span>
+<span class="line-number">       &lt;/div&gt;</span>
+<span class="line-number">   &lt;/div&gt;</span>
+                              </code></pre>
+                            </div>
+                            
+                            <p>break it down : </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> 
+    </section>
+
+<!-- copy button for code block -->
+    <script>
+      const copyButton = document.getElementById('copyButton');
+      const codeBlock = document.querySelector('.blockKode');
+      var btnChange = document.getElementById('copyButton');
+
+      copyButton.addEventListener('click', () => {
+        const codeToCopy = codeBlock.innerText;
+
+        navigator.clipboard.writeText(codeToCopy)
+          .then(() => {
+            codeBlock.classList.add('copied');
+            // btnChange.textContent = "Kode Disalin!";
+            btnChange.innerHTML = "<i class='fas fa-check'></i> Kode Disalin!";
+            setTimeout(() => {
+              codeBlock.classList.remove('copied');
+              // btnChange.textContent = "Salin Kode";
+              btnChange.innerHTML = "<i class='fas fa-copy'></i> Salin Kode";
+            }, 1500);
+          })
+          .catch((error) => {
+            console.error('Copy failed:', error);
+          });
+      });
+
+    </script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
+</body>
+</html>
